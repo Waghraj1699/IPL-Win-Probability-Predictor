@@ -49,7 +49,7 @@ if st.button('Predict Probability'):
     rrr = (runs_left*6)/balls_left
 
     input_df = pd.DataFrame({'batting_team':[batting_team],'bowling_team':[bowling_team],'city':[selected_city],'runs_left':[runs_left],'balls_left':[balls_left],'wickets':[wickets],'total_runs_x':[target],'crr':[crr],'rrr':[rrr]})
-    input_df2 = transform(input_df)
+    input_df2 = transform.transform(input_df)
     result = pipe.predict_proba(input_df)
     loss = result[0][0]
     win = result[0][1]
